@@ -1,0 +1,8 @@
+* Stet
+
+A performant, modern text editor that builds on proven ideas
+
+** Credits
+Rafi Khan
+
+** License
