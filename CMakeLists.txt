@@ -6,13 +6,27 @@ set (Stet_VERSION_MAJOR 0)
 set (Stet_VERSION_MINOR 1)
 
 # use clang compiler
-set(CMAKE_C_COMPILER "/usr/bin/clang")
+# set(CMAKE_C_COMPILER "/usr/bin/clang")
 
 # compile flags
 set (CMAKE_C_FLAGS "-Wall -Wextra -pedantic -std=c99")
 
-# all .c files in src
-file(GLOB SOURCES src/*.c)
+# cmake
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/Modules/")
+
+# zeromq
+find_package(ZeroMQ REQUIRED)
+include_directories(${ZMQ_INCLUDE_DIRS})
+
+# zeromq
+add_subdirectory(external/cppzmq)
+include_directories(external/cppzmq)
+
+set(LIBRARIES
+  ${ZMQ_LIBRARY}
+  )
 
 # create executable
-add_executable(Stet ${SOURCES})
+add_executable(Stet src/stet.cpp)
+target_link_libraries(Stet ${LIBRARIES})
+
