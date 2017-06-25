@@ -3,6 +3,26 @@
 
 A performant, modern text editor that builds on proven ideas
 
+** Install
+#+BEGIN_SRC sh
+  # dependencies
+  brew install boost
+  brew install cmake
+
+  # clone
+  git clone git@github.com:z3t0/stet.git
+  cd stet
+
+  # setup build directory
+  mkdir build
+  cd build/
+
+  cmake .. -G "Unix Makefiles" # or use your preferred build system
+  make # or equivalent
+  ./Stet
+
+#+END_SRC
+
 ** Credits
 Rafi Khan
 

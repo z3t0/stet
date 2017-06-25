@@ -22,8 +22,10 @@ include_directories(${ZMQ_INCLUDE_DIRS})
 add_subdirectory(external/cppzmq)
 include_directories(external/cppzmq)
 
+
 set(LIBRARIES
   ${ZMQ_LIBRARY}
+  boost_system
   )
 
 # create executable
