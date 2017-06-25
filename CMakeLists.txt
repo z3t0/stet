@@ -27,6 +27,7 @@ set(LIBRARIES
   )
 
 # create executable
-add_executable(Stet src/stet.cpp)
+add_executable(Stet src/stet.cpp src/server.cpp)
+include_directories(src/)
 target_link_libraries(Stet ${LIBRARIES})
 
