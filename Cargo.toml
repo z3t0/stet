@@ -1,0 +1,6 @@
+[package]
+name = "stet"
+version = "0.1.0"
+authors = ["Rafi Khan <zetoslab@gmail.com>"]
+
+[dependencies]
